@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Multiplication Table</title>
+
+	<link href="table.css" rel="stylesheet" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
+	<script src="table.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Multiplication Table by Angular.</h1>
+		<h3>Add a number and change the size of table dynamically</h3>
+			<div ng-controller="MultipilcationController" initial-number-limit="15">
+				<input type="number" ng-model="numberLimit" placeholder="Enter a number here"/>
+				<br>
+				
+				<table>
+				<tr ng-repeat="numberA in numbers()">
+					<td ng-repeat="numberB in numbers()">
+					{{compute(numberA,numberB)}}
+					</td>
+				</tr>
+				</table>		
+			</div>
+	</div>
+</body>
+</html>
